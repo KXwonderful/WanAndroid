@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/navHostFragment">
+
+    <!-- Destination 字段包含目的地 Fragment 或 Activity 的 ID -->
+    <fragment
+        android:id="@+id/navHostFragment"
+        android:name="com.wdf.myrobot.ui.fragment.NavHostFragment"
+        android:label="fragment_nav_host"
+        tools:layout="@layout/fragment_nav_host">
+
+        <action
+            android:id="@+id/action_to_robotFragment"
+            app:destination="@id/robot_nav_graph"
+            app:enterAnim="@anim/nav_default_enter_anim"
+            app:exitAnim="@anim/nav_default_exit_anim"
+            app:popEnterAnim="@anim/nav_default_pop_enter_anim"
+            app:popExitAnim="@anim/nav_default_pop_exit_anim" />
+        <action
+            android:id="@+id/action_to_mdcFragment"
+            app:destination="@id/mdc_nav_graph" />
+
+        <action
+            android:id="@+id/action_to_customizeFragment"
+            app:destination="@id/customize_nav_graph" />
+
+        <action
+            android:id="@+id/action_to_jetPackFragment"
+            app:destination="@id/jetpack_nav_graph" />
+
+
+    </fragment>
+
+    <!-- mdc 相关 fragment -->
+    <include app:graph="@navigation/nav_graph_user" />
+
+
+    <!-- main 相关 fragment -->
+    <include app:graph="@navigation/nav_graph_main" />
+
+
+</navigation>
